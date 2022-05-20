@@ -43,14 +43,11 @@ namespace API
 
             app.UseAuthorization();
 
-            //app.UseMiddleware();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
-            //WebHelper.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
         }
     }
 }

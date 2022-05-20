@@ -6,10 +6,6 @@ namespace Application.Features.Transactions.Commands.InitiateTransaction
     {
         public CreateTransactionCommandValidator()
         {
-            RuleFor(i => i.AccountId)
-                .NotNull()
-                .NotEmpty();
-
             RuleFor(i => i.FromAcct)
                 .NotEmpty().WithMessage("{Sender} is required. ")
                 .NotNull();

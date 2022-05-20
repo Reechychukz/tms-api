@@ -6,7 +6,6 @@ namespace Application.Features.Transactions.Commands.InitiateTransaction
     public class CreateTransactionCommand : IRequest<Guid>
     {
         //Parent Id
-        public Guid AccountId { get; set; }
         public double Amount { get; set; }
         public string Narration { get; set; }
         public ETransactionType TransactionType { get; set; }
