@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence
@@ -16,7 +15,7 @@ namespace Infrastructure.Persistence
             {
                 appDbContext.Transactions.AddRange(GetPreConfigureTransactions());
                 await appDbContext.SaveChangesAsync();
-                logger.LogInformation("Seed database associated with context {DbCOntextName}", typeof(AppContext).Name);
+                logger.LogInformation("Seed database associated with context {DbCOntextName}", typeof(AppDbContext).Name);
             }
         }
 

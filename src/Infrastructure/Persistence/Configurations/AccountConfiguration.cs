@@ -16,7 +16,6 @@ namespace Infrastructure.Data.DbContext.Configurations
 
             builder.Property(x => x.AccountNumber).IsRequired();
             builder.Property(x => x.AccountType).IsRequired();
-            builder.Property(x => x.CustomerId).IsRequired();
         }
     }
 }
