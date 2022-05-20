@@ -9,7 +9,7 @@ using System.Net;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/customers/customer-id/[controller]")]
     public class AccountsController : ControllerBase
     {
         private readonly IMediator _mediator;
