@@ -25,8 +25,8 @@ namespace API.Controllers
         /// <param name="customerId"></param>
         /// <returns></returns>
         [HttpGet("{fisrtName}", Name = "GetAccounts")]
-        [ProducesResponseType(typeof(IEnumerable<AccountsVm>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<AccountsVm>>> GetAccountsByCustomerId(Guid customerId)
+        [ProducesResponseType(typeof(IEnumerable<AccountsDto>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<AccountsDto>>> GetAccountsByCustomerId(Guid customerId)
         {
             var query = new GetAccountsListQuery(customerId);
             var accounts = await _mediator.Send(query);

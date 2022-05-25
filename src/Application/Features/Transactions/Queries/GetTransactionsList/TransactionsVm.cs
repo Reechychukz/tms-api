@@ -2,7 +2,7 @@
 
 namespace Application.Features.Transactions.Queries.GetTransactionsList
 {
-    public class TransactionsVm
+    public class TransactionsDto
     {
         public Guid Id { get; set; }
         public double Amount { get; set; }

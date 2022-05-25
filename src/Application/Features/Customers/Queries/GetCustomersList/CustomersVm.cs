@@ -1,6 +1,6 @@
 ﻿namespace Application.Features.Customers.Queries.GetCustomersList
 {
-    public class CustomersVm
+    public class CustomersDto
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }

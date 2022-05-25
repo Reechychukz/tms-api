@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Features.Transactions.Queries
 {
-    public class GetTransactionsListQuery : IRequest<List<TransactionsVm>>
+    public class GetTransactionsListQuery : IRequest<List<TransactionsDto>>
     {
         public string Sender { get; set; }
 
