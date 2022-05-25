@@ -4,17 +4,17 @@ using MediatR;
 
 namespace Application.Features.Customers.Queries.GetCustomersList
 {
-    public class GetCustomersListQuery : IRequest<List<CustomersVm>>
+    public class GetCustomersListQuery : IRequest<List<CustomersDto>>
     {
         public string FirstName { get; set; }
 
         public GetCustomersListQuery(string firstName)
         {
-            FirstName = FirstName ?? throw new ArgumentNullException(nameof(firstName));
+            FirstName = firstName;
         }
     }
 
-    public class GetCustomersListQueryHandler : IRequestHandler<GetCustomersListQuery, List<CustomersVm>>
+    public class GetCustomersListQueryHandler : IRequestHandler<GetCustomersListQuery, List<CustomersDto>>
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
@@ -25,10 +25,10 @@ namespace Application.Features.Customers.Queries.GetCustomersList
             _mapper = mapper;
         }
 
-        public async Task<List<CustomersVm>> Handle(GetCustomersListQuery request, CancellationToken cancellationToken)
+        public async Task<List<CustomersDto>> Handle(GetCustomersListQuery request, CancellationToken cancellationToken)
         {
             var customersList = await _customerRepository.GetCustomersByFIrstName(request.FirstName);
-            return _mapper.Map<List<CustomersVm>>(customersList);
+            return _mapper.Map<List<CustomersDto>>(customersList);
         }
     }
 }

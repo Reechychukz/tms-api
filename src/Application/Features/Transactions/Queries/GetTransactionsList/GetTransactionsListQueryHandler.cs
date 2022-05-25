@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Features.Transactions.Queries.GetTransactionsList
 {
-    public class GetTransactionsListQueryHandler : IRequestHandler<GetTransactionsListQuery, List<TransactionsVm>>
+    public class GetTransactionsListQueryHandler : IRequestHandler<GetTransactionsListQuery, List<TransactionsDto>>
     {
         private readonly ITransactionRepository _transactionRepository;
         private readonly IMapper _mapper;
@@ -15,10 +15,10 @@ namespace Application.Features.Transactions.Queries.GetTransactionsList
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<List<TransactionsVm>> Handle(GetTransactionsListQuery request, CancellationToken cancellationToken)
+        public async Task<List<TransactionsDto>> Handle(GetTransactionsListQuery request, CancellationToken cancellationToken)
         {
             var transactionList = await _transactionRepository.GetTransactionsBySender(request.Sender);
-            return _mapper.Map<List<TransactionsVm>>(transactionList);
+            return _mapper.Map<List<TransactionsDto>>(transactionList);
         }
     }
 }

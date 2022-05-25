@@ -26,8 +26,8 @@ namespace API.Controllers
         /// <param name="sender"></param>
         /// <returns></returns>
         [HttpGet("{sender}", Name = "GetTransaction")]
-        [ProducesResponseType(typeof(IEnumerable<TransactionsVm>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<TransactionsVm>>> GetTransactionsBySender(string sender)
+        [ProducesResponseType(typeof(IEnumerable<TransactionsDto>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<TransactionsDto>>> GetTransactionsBySender(string sender)
         {
             var query = new GetTransactionsListQuery(sender);
             var transactions = await _mediator.Send(query);

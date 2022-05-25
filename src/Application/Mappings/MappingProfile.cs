@@ -16,13 +16,13 @@ namespace Application.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<Transaction, TransactionsVm>().ReverseMap();
+            CreateMap<Transaction, TransactionsDto>().ReverseMap();
             CreateMap<Transaction, CreateTransactionCommand>().ReverseMap();
             CreateMap<Transaction, UpdateTransactionCommand>().ReverseMap();
-            CreateMap<Customer, CustomersVm>().ReverseMap();
+            CreateMap<Customer, CustomersDto>().ReverseMap();
             CreateMap<Customer, CreateCustomerCommand>().ReverseMap();
             CreateMap<Customer, UpdateCustomerCommand>().ReverseMap();
-            CreateMap<Account, AccountsVm>().ReverseMap();
+            CreateMap<Account, AccountsDto>().ReverseMap();
             CreateMap<Account, CreateAccountCommand>().ReverseMap();
             CreateMap<Account, UpdateAccountCommand>().ReverseMap();
         }

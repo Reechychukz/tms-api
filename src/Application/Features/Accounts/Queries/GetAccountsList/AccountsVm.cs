@@ -2,7 +2,7 @@
 
 namespace Application.Features.Accounts.Queries.GetAccountsList
 {
-    public class AccountsVm
+    public class AccountsDto
     {
         public Guid Id { get; set; }
         public EAccountType AccountType { get; set; }
