@@ -1,2 +1,3 @@
 # tms-api
-An API driven Transaction Management System
+An API driven Transaction Management System designed in clean architecture pattern using CQRS and Mediatr nuget package
+
